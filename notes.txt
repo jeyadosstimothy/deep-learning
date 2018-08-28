@@ -1,0 +1,45 @@
+https://keras.io/
+
+CNN: https://adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/
+Dataset: https://www.kaggle.com/smeschke/four-shapes
+prevent local maxima: https://github.com/keras-team/keras/issues/1006
+LeNet: https://www.pyimagesearch.com/2017/12/11/image-classification-with-keras-and-deep-learning/
+
+RNN: https://github.com/sagar448/Keras-Recurrent-Neural-Network-Python
+
+theano - installed for user, not in pip env
+tensorflow, cntk - pip env
+
+DeepDSL
+DSL comparisons
+
+
+install driver: https://askubuntu.com/a/851147 follow steps and choose the driver that is latest and proprietary
+CUDA and cuDNN: https://gist.github.com/zhanwenchen/e520767a409325d9961072f666815bb8
+tensorflow: https://www.tensorflow.org/install/install_linux install tensorflow==1.8.0 using pip in virtual env
+
+20 epochs:
+    channels last:
+        cntk - 61
+    	tensorflow - 42
+    	theano - 100
+    	mxnet - 42
+
+    channels first:
+        cntk - 41
+    	tensorflow - 41
+    	theano - 40
+    	mxnet - 42
+
+(x, y, 3) (3, x, y)
+deepdsl 200 epochs - 3 sec - accuracy 40%
+
+1. keras < high level API as DSL
+2. deepdsl as backend for keras (after  validating)
+
+
+c++, java with GPU or directly for cuda
+1. next frame prediction
+2. matrix convergence
+
+why deepdsl accuracy 40%, is it actually doing 200 epochs
