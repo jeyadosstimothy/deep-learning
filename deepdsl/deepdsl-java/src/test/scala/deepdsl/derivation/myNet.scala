@@ -51,8 +51,8 @@ class myNet{
     	val mnist = Mnist(dim)
     	val loop = Loop(loss, accuracy, mnist, (x, y), param, solver)
 
-    	// runtimeMemory(loop.train.lst)
-	    // parameterMemory(param, momentum)
+    	runtimeMemory(loop.train.lst)
+	    parameterMemory(param, momentum)
 		// generate training and testing file
 		CudaCompile(path).print(loop)
 	}

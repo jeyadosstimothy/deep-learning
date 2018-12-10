@@ -26,8 +26,8 @@ tensorflow: https://www.tensorflow.org/install/install_linux install tensorflow=
     	mxnet - 42
 
     channels first:
-        cntk - 41
-    	tensorflow - 41
+        cntk - 41 (599 on cpu for 10 epochs)
+    	tensorflow - 41 (489 on cpu for 10 epochs)
     	theano - 40
     	mxnet - 42
 
@@ -43,3 +43,52 @@ c++, java with GPU or directly for cuda
 2. matrix convergence
 
 why deepdsl accuracy 40%, is it actually doing 200 epochs
+
+
+
+python API that compiles into CUDA code:
+	1. understand flow of deepdsl
+	2. see how to reuse keras' code
+
+#######################################################################################################################################################
+
+DeepDSL
+    1. Lot of optimizations, better than mainstream libraries/frameworks
+
+DSL
+    2. Notations (should be easier to use for non programmers)
+        -> New notations -> should have residual connection support, inceptions (to test state of the art dl models)
+        -> matlab, keras, and other high level apis
+
+    3. optimizations
+        -> use optimizations of DeepDSL
+        -> if new notations, then either by compiling to deepdsl or implementing optimizations
+        -> if new optimization, try future works that are shown in conclusion (RNN, genetic adversary network, reinforcement learning networks)
+
+
+To Do
+    1. See how all other mainstream libraries implement deep learning, in order to understand what deepdsl does differently
+    2. see examples of other libraries/frameworks for notations
+    *. try different examples, try changing the java code, printing out the target and predictions, different models
+    *. check why convergence is slow
+    3. understand the optimizations
+    *. change code to represent model as list
+    *. try creating jar and execute without maven
+
+
+Ideally, we need a complete DSL without external dependancies for optimization
+    -> opens opportunity for us and community to add new optimizations, features
+    -> as it is now, the deepdsl code can only be used for research purposes, for new papers that add new optimizations to the code. the optimizations cannot be added to the code due to license
+
+For 2nd review,
+    -> show notations alone with VGG, overfeat, alexnet, lenet on MNIST
+    -> justification for notations in python
+        * easy to use.
+        * why is deepdsl not easy to use? few extra steps(solver, param, cudacompile), naming layers, lot of different imports
+        * can add support for image processing
+        * deepdsl does not have imaeg processing support. image processing(imagenet, lmdb, mnist) is done in java side. difficult for user
+        * deepdsl was not designed with user convenience in mind. it was designed to showcase the optimizations and efficiency
+    -> quantification of efficiency
+        * cannot be said at this stage
+        * lines of code maybe an indicator, but if notation changes it cannot be used
+        * ease of usage needs to be measured
